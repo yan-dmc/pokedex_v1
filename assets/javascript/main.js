@@ -22,6 +22,9 @@ const limit = 12;
 let offset = 0;
 const maxRecords = 149;
 
+function capitalizeFirstLetter(str) {
+    return str[0].toUpperCase() + str.slice(1);
+}
 
 function loadPokemonItems(offset, limit) {
     function convertPokemonTypesToLi(pokemonTypes) {
@@ -30,8 +33,8 @@ function loadPokemonItems(offset, limit) {
     
     function convertPokemonToLi(pokemon) {
         return `
-        <li class="pokeCard" data-name="${pokemon.name.toLowerCase()}" data-version="1"
-            style="background-image: url(./assets/imagens/Cartas/${pokemon.name.toLowerCase()}1.png); background-size: contain">
+        <li class="pokeCard" data-name="${capitalizeFirstLetter(pokemon.name)}" data-version="1"
+            style="background-image: url(./assets/imagens/Cartas/${capitalizeFirstLetter(pokemon.name)}1.png); background-size: contain">
             <div class="types">
                 ${convertPokemonTypesToLi(pokemon.types).join('')}
             </div>
@@ -49,7 +52,7 @@ function loadPokemonItems(offset, limit) {
             if (targetCard) {
                 let currentVersion = parseInt(targetCard.dataset.version, 10);
                 let nextVersion = currentVersion + 1;
-                const pokemonName = targetCard.dataset.name.toLowerCase();;
+                const pokemonName = capitalizeFirstLetter(targetCard.dataset.name);
     
                 let nextImageUrl = `./assets/imagens/Cartas/${pokemonName}${nextVersion}.png`;
     
