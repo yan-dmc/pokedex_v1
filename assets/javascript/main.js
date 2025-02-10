@@ -31,7 +31,7 @@ function loadPokemonItems(offset, limit) {
     function convertPokemonToLi(pokemon) {
         return `
         <li class="pokeCard" data-name="${pokemon.name}" data-version="1"
-            style="background-image: url('${"./assets/imagens/Cartas/" + pokemon.name + "1.png"}'); background-size: contain;"
+            style="background-image: url('https://yan-dmc.github.io/pokedex_v1/assets/imagens/Cartas/${pokemon.name}1.png');"
             <div class="types">
                 ${convertPokemonTypesToLi(pokemon.types).join('')}
             </div>
