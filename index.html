@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex TCG</title>
+    <link rel="icon" type="image/x-icon" href="./assets/imagens/icon.png">
+
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+</head>
+<body>
+    <main>
+        <figure><a href="https://www.pokemon.com/br" target=_blank><img src="./assets/imagens/pokeLogo.png" alt="pokelogo"></a></figure>
+        <section class="pokedex">
+            <div class="pagination">
+                <button class="prev"><span><</span></button>
+                <button class="next"><span>></span></button>
+            </div>
+            <ol id="pokemonList" class="pokemonList">
+            <!-- pokemons -->
+            </ol>
+        </section>
+        <section class="newTrailer hidden" style="padding-bottom:35%; position:relative; width: 62%">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CiLAY4HmNxk?si=KdtxaI9Ym0WVVOla" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    </main>
+    <nav>
+        <div class="options">
+            <button class="home selecionado" onclick="selecionar('.home', '.new'), irParaHome('.newTrailer', '.pokedex')">Home</button>
+            <button class="new" onclick="selecionar('.new', '.home'), irParaNew('.pokedex', '.newTrailer')">What's new</button>
+        </div>
+        <div class="base"></div>
+    </nav>
+
+    <script src="./assets/javascript/pokeapi.js"></script>
+    <script src="./assets/javascript/main.js"></script>
+</body>
+</html>

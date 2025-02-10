@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'pixel', Courier, monospace;
+    font-weight: 500;
+}
+
+.font2 {
+    font-family: monospace;
+}
+
+@font-face {
+    font-family: pixel;
+    src: url(../fonts/fonte1.ttf);
+}
+
+
+/* Custom Scroll */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 0, 0);
+    border-radius: 10px;
+    border: 1px solid #682CCD;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #682CCD;
+}
