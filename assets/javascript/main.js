@@ -30,8 +30,8 @@ function loadPokemonItems(offset, limit) {
     
     function convertPokemonToLi(pokemon) {
         return `
-        <li class="pokeCard" data-name="${pokemon.name}" data-version="1"
-            style="background-image: url(./assets/imagens/Cartas/${pokemon.name}1.png); background-size: contain">
+        <li class="pokeCard" data-name="${pokemon.name.toLowerCase()}" data-version="1"
+            style="background-image: url(./assets/imagens/Cartas/${pokemon.name.toLowerCase()}1.png); background-size: contain">
             <div class="types">
                 ${convertPokemonTypesToLi(pokemon.types).join('')}
             </div>
@@ -49,7 +49,7 @@ function loadPokemonItems(offset, limit) {
             if (targetCard) {
                 let currentVersion = parseInt(targetCard.dataset.version, 10);
                 let nextVersion = currentVersion + 1;
-                const pokemonName = targetCard.dataset.name;
+                const pokemonName = targetCard.dataset.name.toLowerCase();;
     
                 let nextImageUrl = `./assets/imagens/Cartas/${pokemonName}${nextVersion}.png`;
     
